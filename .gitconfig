@@ -3,7 +3,8 @@
   co = checkout
   # Pull wth rebase option
   pullr = pull -r
-  
+  # Log with graph and oneline
+  logg = log --graph --oneline
   # Show verbose output about tags, branches or remotes
   tags = tag -l
   branches = branch -a
