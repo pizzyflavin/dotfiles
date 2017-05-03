@@ -102,3 +102,6 @@ let g:solarized_termtrans=1
 " Generate closing brace with opening brace
 inoremap { {<CR>}<ESC>ko
 
+" Remove trailing whitespace
+nnoremap <Leader>rtw :%s/\s\+$//e<CR>
+
