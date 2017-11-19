@@ -40,3 +40,5 @@
 [user]
 	name = pizzyflavin
 	email = pizzyflavin@gmail.com
+[push]
+	default = simple

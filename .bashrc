@@ -55,6 +55,7 @@ alias lu='ls -ltur'        #  Sort by/show access time,most recent last.
 alias ll="ls -alhv"
 alias lr='ll -R'           #  Recursive ls.
 alias la='ll -A'           #  Show hidden files.
+alias lsd="ll -d */"       #  Only show directories
 alias l='ls -lhv'          #  Like ll, but don't show hidden files
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
