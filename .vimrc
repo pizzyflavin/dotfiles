@@ -27,6 +27,9 @@ set ruler
 " Blink cursor on error instead of beeping (grr)
 set visualbell
 
+" Stop screen from flashing due to visualbell
+set t_vb=
+
 " Encoding
 set encoding=utf-8
 
@@ -100,7 +103,7 @@ let g:solarized_termtrans=1
 " colorscheme solarized
 
 " Generate closing brace with opening brace
-inoremap { {<CR>}<ESC>ko
+inoremap { {}<ESC>i
 
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
