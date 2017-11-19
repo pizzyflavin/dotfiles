@@ -15,3 +15,9 @@ fi
 if [ -f ~/.bashrc ]; then
   source ~/.bashrc
 fi
+
+# Check for git-completion file
+if [ -f ~/.git-completion.bash ]; then
+    source ~/.git-completion.bash
+fi
+
