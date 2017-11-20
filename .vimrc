@@ -4,7 +4,8 @@ set nocompatible
 " Helps force plugins to load correctly when it is turned back on below
 filetype off
 
-" TODO: Load plugins here (pathogen or vundle)
+" Load plugins here (pathogen or vundle)
+execute pathogen#infect()
 
 " Turn on syntax highlighting
 syntax on
