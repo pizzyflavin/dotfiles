@@ -40,6 +40,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 alias cp='cp -i'
 alias mv='mv -i'     # -> Prevents accidentally clobbering files.
 alias grep='grep --color'
+
 #-------------------------------------------------------------
 # The 'ls' family (this assumes you use a recent GNU ls).
 #-------------------------------------------------------------
@@ -59,6 +60,10 @@ alias lsd="ll -d */"       #  Only show directories
 alias l='ls -lhv'          #  Like ll, but don't show hidden files
 alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
 
+#-------------------------------------------------------------
+# Dotfiles management
+#-------------------------------------------------------------
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 
 #-------------------------------------------------------------
 # Tailoring 'less'
