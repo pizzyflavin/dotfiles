@@ -109,3 +109,5 @@ inoremap { {}<ESC>i
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+" Plugin Config: Flake8
+autocmd BufWritePost *.py call Flake8()
