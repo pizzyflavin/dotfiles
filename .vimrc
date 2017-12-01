@@ -1,17 +1,17 @@
+" vim-plug setup
+call plug#begin('~/.vim/plugged')
+
+    Plug 'vim-python/python-syntax'
+    Plug 'crusoexia/vim-monokai'
+    Plug 'vim-syntastic/syntastic'
+    Plug 'scrooloose/nerdtree'
+    Plug 'scrooloose/syntastic'
+    Plug 'tpope/vim-fugitive'
+
+call plug#end()
+
 " Don't try to be vi compatible
 set nocompatible
-
-" Helps force plugins to load correctly when it is turned back on below
-filetype off
-
-" Load plugins here (pathogen or vundle)
-execute pathogen#infect()
-
-" Turn on syntax highlighting
-syntax on
-
-" For plugins to load correctly
-filetype plugin indent on
 
 " TODO: Pick a leader key
 " let mapleader = ","
@@ -97,8 +97,8 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
+" let g:solarized_termcolors=256
+" let g:solarized_termtrans=1
 " put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
 " in ~/.vim/colors/ and uncomment:
 " colorscheme solarized
@@ -109,5 +109,21 @@ inoremap { {}<ESC>i
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
-" Plugin Config: Flake8
-autocmd BufWritePost *.py call Flake8()
+" Plugin Configuration
+
+" Python syntax
+let g:python_highlight_builtins = 1
+let g:python_highlight_builtin_funcs_kwarg = 1
+let g:python_highlight_exceptions = 1
+let g:python_highlight_string_formatting = 1
+let g:python_highlight_string_format = 1
+let g:python_highlight_string_templates = 1
+let g:python_highlight_indent_errors = 1
+let g:python_highlight_doctests = 1
+let g:python_highlight_class_vars = 1
+let g:python_highlight_operators = 1
+let g:python_highlight_file_headers_as_comments = 1
+
+colorscheme monokai
+" Flake8
+" autocmd BufWritePost *.py call Flake8()
