@@ -1,18 +1,17 @@
-" vim-plug setup
+" Plugin Setup
 call plug#begin('~/.vim/plugged')
 
-    Plug 'vim-python/python-syntax'
-    Plug 'crusoexia/vim-monokai'
-    Plug 'vim-syntastic/syntastic'
     Plug 'scrooloose/nerdtree'
     Plug 'scrooloose/syntastic'
     Plug 'tpope/vim-fugitive'
+    Plug 'crusoexia/vim-monokai'
+    Plug 'vim-python/python-syntax'
 
 call plug#end()
 
 " Don't try to be vi compatible
 set nocompatible
-
+"
 " TODO: Pick a leader key
 " let mapleader = ","
 
@@ -109,6 +108,7 @@ inoremap { {}<ESC>i
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+<<<<<<< HEAD
 " Plugin Configuration
 
 " Python syntax
@@ -127,3 +127,21 @@ let g:python_highlight_file_headers_as_comments = 1
 colorscheme monokai
 " Flake8
 " autocmd BufWritePost *.py call Flake8()
+=======
+" Plugin Config
+
+" Monokai color scheme
+colorscheme monokai
+
+" Syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
+let g:syntastic_cpp_checkers=['avrgcc']
+>>>>>>> .vimrc: Initial vimplug setup (move from Pathogen)
