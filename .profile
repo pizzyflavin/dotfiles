@@ -44,7 +44,7 @@ PATH="$HOME_BIN:$PATH"
 ARM_GCC_PATH="$HOME/tools/EmbeddedArm/gcc-arm-none-eabi-7-2017-q4-major/bin"
 PATH="$ARM_GCC_PATH:$PATH"
 
-OPENOCD_PATH="$HOME/EmbeddedArm/openocd-bin/bin"
+OPENOCD_PATH="$HOME/tools/EmbeddedArm/openocd-bin/bin"
 PATH="$OPENOCD_PATH:$PATH"
 
 export PATH
