@@ -41,8 +41,11 @@ HOME_BIN="$HOME/bin"
 PATH="$HOME_BIN:$PATH"
 
 # Add ARM gcc to path
-ARM_GCC_PATH="/usr/local/arm/gcc-arm-none-eabi-6-2017-q1-update/bin"
+ARM_GCC_PATH="$HOME/tools/EmbeddedArm/gcc-arm-none-eabi-7-2017-q4-major/bin"
 PATH="$ARM_GCC_PATH:$PATH"
+
+OPENOCD_PATH="$HOME/EmbeddedArm/openocd-bin/bin"
+PATH="$OPENOCD_PATH:$PATH"
 
 export PATH
 
