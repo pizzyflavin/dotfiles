@@ -52,6 +52,9 @@ set softtabstop=4
 set expandtab
 set noshiftround
 
+" Don't expand tabs on Makefiles, though
+autocmd FileType make setlocal noexpandtab
+
 " Cursor motion
 set scrolloff=3
 set backspace=indent,eol,start
