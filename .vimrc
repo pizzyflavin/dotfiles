@@ -121,9 +121,11 @@ inoremap { {}<ESC>i
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
 " Plugin Configuration
+" ====================
 
 " Monokai color scheme
 colorscheme monokai
+set t_ut=
 
 " Syntastic
 set statusline+=%#warningmsg#
