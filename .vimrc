@@ -52,8 +52,6 @@ set softtabstop=4
 set expandtab
 set noshiftround
 
-" Don't expand tabs on Makefiles, though
-autocmd FileType make setlocal noexpandtab
 
 " Cursor motion
 set scrolloff=3
@@ -73,6 +71,9 @@ set ttyfast
 
 " Status bar
 set laststatus=2
+
+" Status Line
+set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P}}
 
 " Last line
 set showmode
@@ -108,11 +109,6 @@ map <leader>l :set list!<CR> " Toggle tabs and EOL
 " Color scheme (terminal)
 set t_Co=256
 set background=dark
-" let g:solarized_termcolors=256
-" let g:solarized_termtrans=1
-" put https://raw.github.com/altercation/vim-colors-solarized/master/colors/solarized.vim
-" in ~/.vim/colors/ and uncomment:
-" colorscheme solarized
 
 " Generate closing brace with opening brace
 inoremap { {}<ESC>i
@@ -120,14 +116,27 @@ inoremap { {}<ESC>i
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+" ===========================================================================
+" FileType Specific Settings
+" ===========================================================================
+
+" Makefiles
+" =========
+" Don't expand tabs and set width to 8
+autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+
+" ===========================================================================
 " Plugin Configuration
-" ====================
+" ===========================================================================
 
 " Monokai color scheme
+" ====================
 colorscheme monokai
 set t_ut=
 
 " Syntastic
+" =========
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
@@ -140,6 +149,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_cpp_checkers=['avrgcc']
 
 " Python syntax
+" =============
 let g:python_highlight_builtins = 1
 let g:python_highlight_builtin_funcs_kwarg = 1
 let g:python_highlight_exceptions = 1
