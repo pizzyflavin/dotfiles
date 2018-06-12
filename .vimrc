@@ -146,7 +146,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
-let g:syntastic_cpp_checkers=['avrgcc']
+" For DeltaTau Power PMAC Script Language
+au BufRead,BufNewFile *.pmh set ft=c
+au BufRead,BufNewFile *.pmc set ft=c
+au BufRead,BufNewFile *.plc set ft=c
 
 " Python syntax
 " =============
