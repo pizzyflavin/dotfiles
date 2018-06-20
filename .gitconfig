@@ -44,3 +44,4 @@
 	default = simple
 [core]
 	editor = /usr/local/bin/vim
+	autocrlf = input
