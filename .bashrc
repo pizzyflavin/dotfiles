@@ -39,6 +39,7 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 
 alias cp='cp -i'
 alias mv='mv -i'     # -> Prevents accidentally clobbering files.
+alias rm='rm -i'     # -> Prevents accidentally removing files.
 alias grep='grep --color'
 
 #-------------------------------------------------------------
