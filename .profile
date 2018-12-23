@@ -41,8 +41,15 @@ HOME_BIN="$HOME/bin"
 PATH="$HOME_BIN:$PATH"
 
 # Add ARM gcc to path
-ARM_GCC_PATH="$HOME/tools/EmbeddedArm/gcc-arm-none-eabi-7-2017-q4-major/bin"
-PATH="$ARM_GCC_PATH:$PATH"
+ARM_GCC_DIR=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d -name gcc-arm-none-eabi-*)
+if [ -d "$ARM_GCC_DIR" ]; then
+    ARM_GCC_PATH="$ARM_GCC_DIR"/bin
+    PATH="$ARM_GCC_PATH:$PATH"
+    echo "Arm GCC added to path"
+fi
+
+
+
 
 OPENOCD_PATH="$HOME/tools/EmbeddedArm/openocd-bin/bin"
 PATH="$OPENOCD_PATH:$PATH"
