@@ -40,19 +40,62 @@ fi
 HOME_BIN="$HOME/bin"
 PATH="$HOME_BIN:$PATH"
 
-# Add ARM gcc to path
-ARM_GCC_DIR=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d -name gcc-arm-none-eabi-*)
-if [ -d "$ARM_GCC_DIR" ]; then
-    ARM_GCC_PATH="$ARM_GCC_DIR"/bin
-    PATH="$ARM_GCC_PATH:$PATH"
-    echo "Arm GCC added to path"
-fi
+#=============================================================================
+# Embedded Development Stuff
+#=============================================================================
+# Set EMBEDDED_DEV to false to disable
+EMBEDDED_DEV=true
+if [ "$EMBEDDED_DEV" = true ]; then
 
+    # Get possible installed version of arm gcc
+    INSTALLED_ARM_GCC=$(command -v arm-none-eabi-gcc)
 
+    # Get possible embedded tools version of arm gcc
+    EMBEDDED_TOOLS_ARM_GCC=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d \
+                             -name gcc-arm-none-eabi-*)
 
+    # Is Arm GCC already in the path?
+    if [ -x "$INSTALLED_ARM_GCC" ]; then
+        echo "* Arm GNU Toolchain is already installed in $INSTALLED_ARM_GCC"
+        echo "  To use another version, use absolute path"
 
-OPENOCD_PATH="$HOME/tools/EmbeddedArm/openocd-bin/bin"
-PATH="$OPENOCD_PATH:$PATH"
+    # If not, is it in embedded tools?
+    elif [ -d "$EMBEDDED_TOOLS_ARM_GCC" ]; then
+        # Add this ARM gcc to path
+        ARM_GCC_PATH="$EMBEDDED_TOOLS_ARM_GCC"/bin
+        PATH="$ARM_GCC_PATH:$PATH"
+        echo "* Arm GNU Toolchain from $EMBEDDED_TOOLS_ARM_GCC added to path"
+
+    # Then it is not installed
+    else
+        echo "* Arm GNU Toolchain is not installed. Please download and install"
+    fi
+
+    # Get possible installed version of OpenOCD
+    INSTALLED_OPENOCD=$(command -v openocd)
+
+    # Get possible embedded tools version of OpenOCD
+    EMBEDDED_TOOLS_OPENOCD=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d \
+                             -name openocd-*)
+
+    # Is OpenOCD already in the path?
+    if [ -x "$INSTALLED_OPENOCD" ]; then
+        echo "* OpenOCD is already installed in $INSTALLED_OPENOCD"
+        echo "  To use another version, use absolute path"
+
+    # If not, is it in embedded tools?
+    elif [ -d "$EMBEDDED_TOOLS_OPENOCD" ]; then
+        # Add this OpenOCD to path
+        OPENOCD_PATH="$EMBEDDED_TOOLS_OPENOCD"/bin
+        PATH="$OPENOCD_PATH:$PATH"
+        echo "* OpenOCD from $EMBEDDED_TOOLS_OPEN_OCD added to path"
+
+    # Then it is not installed
+    else
+        echo "* OpenOCD is not installed. Please download and install"
+    fi
+
+fi # EMBEDDED_DEV
 
 export PATH
 
