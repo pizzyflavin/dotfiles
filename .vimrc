@@ -165,3 +165,8 @@ let g:python_highlight_doctests = 1
 let g:python_highlight_class_vars = 1
 let g:python_highlight_operators = 1
 let g:python_highlight_file_headers_as_comments = 1
+
+" YouCompleteMe
+" -------------
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+
