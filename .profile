@@ -106,7 +106,8 @@ export PATH
 if [[ $platform == 'darwin' ]]; then
 
     # Add gnuman directory to manpath (macOS only)
-    MANPATH="$(brew --prefix coreutils)/libexec/gnuman:$MANPATH"
+    BREW_COREUTILS_MANPATH="$(brew --prefix coreutils)/libexec/gnuman"
+    MANPATH="$BREW_COREUTILS_MANPATH:$MANPATH"
 fi
 
 export MANPATH
