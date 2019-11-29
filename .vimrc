@@ -15,6 +15,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'tpope/vim-fugitive'
     Plug 'crusoexia/vim-monokai'
     Plug 'vim-python/python-syntax'
+    Plug 'ycm-core/YouCompleteMe'
 
 call plug#end()
 
