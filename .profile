@@ -62,7 +62,7 @@ if [ "$EMBEDDED_DEV" = true ]; then
     # If not, is it in embedded tools?
     elif [ -d "$EMBEDDED_TOOLS_ARM_GCC" ]; then
         # Add this ARM gcc to path
-        ARM_GCC_PATH="$EMBEDDED_TOOLS_ARM_GCC"/bin
+        ARM_GCC_PATH="$EMBEDDED_TOOLS_ARM_GCC/bin"
         PATH="$ARM_GCC_PATH:$PATH"
         echo "* Arm GNU Toolchain from $EMBEDDED_TOOLS_ARM_GCC added to path"
 
@@ -86,7 +86,7 @@ if [ "$EMBEDDED_DEV" = true ]; then
     # If not, is it in embedded tools?
     elif [ -d "$EMBEDDED_TOOLS_OPENOCD" ]; then
         # Add this OpenOCD to path
-        OPENOCD_PATH="$EMBEDDED_TOOLS_OPENOCD"/bin
+        OPENOCD_PATH="$EMBEDDED_TOOLS_OPENOCD/bin"
         PATH="$OPENOCD_PATH:$PATH"
         echo "* OpenOCD from $EMBEDDED_TOOLS_OPEN_OCD added to path"
 
