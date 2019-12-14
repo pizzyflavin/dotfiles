@@ -23,6 +23,10 @@ fi
 
 if [[ $platform == 'darwin' ]]; then
 
+    # Add homebrew sbin to path
+    BREW_SBIN="/usr/local/sbin"
+    PATH="$BREW_SBIN:$PATH"
+
     # Add gnubin directory to path (macOS only)
     BREW_COREUTILS_PATH="$(brew --prefix coreutils)/libexec/gnubin"
     PATH="$BREW_COREUTILS_PATH:$PATH"
