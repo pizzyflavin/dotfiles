@@ -31,6 +31,10 @@ if [[ $platform == 'darwin' ]]; then
     BREW_COREUTILS_PATH="$(brew --prefix coreutils)/libexec/gnubin"
     PATH="$BREW_COREUTILS_PATH:$PATH"
 
+    # Add gnugrep directory to path (macOS only)
+    BREW_GREP_PATH="$(brew --prefix grep)/libexec/gnubin"
+    PATH="$BREW_GREP_PATH:$PATH"
+
     # Add homebrew's python to path before system python (macOS only)
     BREW_PYTHON_PATH="/usr/local/opt/python/libexec/bin"
     PATH="$BREW_PYTHON_PATH:$PATH"
