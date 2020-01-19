@@ -7,7 +7,7 @@ if empty(glob('~/.vim/autoload/plug.vim'))
   autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
 endif
 
-" Let it begin
+" Start plug-ins
 call plug#begin('~/.vim/plugged')
 
     Plug 'scrooloose/nerdtree'
@@ -16,6 +16,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'crusoexia/vim-monokai'
     Plug 'vim-python/python-syntax'
     Plug 'ycm-core/YouCompleteMe'
+    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
 
 call plug#end()
 
