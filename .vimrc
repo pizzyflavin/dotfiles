@@ -169,5 +169,6 @@ let g:python_highlight_file_headers_as_comments = 1
 
 " YouCompleteMe
 " -------------
-let g:ycm_global_ycm_extra_conf = '$HOME/.vim/plugged/YouCompleteMe/.ycm_extra_conf.py'
+let g:ycm_extra_conf_vim_data = ['&filetype']
+let g:ycm_global_ycm_extra_conf = '$HOME/.vim/plugged/YouCompleteMe/third_party/ycmd/.ycm_extra_conf.py'
 
