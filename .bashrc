@@ -32,6 +32,11 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 #  converted into scripts and removed from here.
 #
 #============================================================
+#-------------------------------------------------------------
+# System Aliases
+#-------------------------------------------------------------
+alias upd8='sudo apt update && sudo apt dist-upgrade && \
+            sudo apt autoremove --purge && sudo apt autoclean'
 
 #-------------------
 # Personal Aliases
