@@ -113,19 +113,28 @@ set t_Co=256
 set background=dark
 
 " Generate closing brace with opening brace
-inoremap { {}<ESC>i
+"inoremap { {}<ESC>i
 
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
+
+
 " ===========================================================================
 " FileType Specific Settings
 " ===========================================================================
-
+filetype on
 " Makefiles
 " =========
 " Don't expand tabs and set width to 8
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
+
+" ===========================================================================
+" Make/Build Settings
+" ===========================================================================
+augroup MakeSetup
+    autocmd FileType cpp,c :autocmd! MakeSetup BufWritePost <buffer> :make
+augroup END
 
 
 " ===========================================================================
