@@ -102,9 +102,9 @@ vnoremap <F1> :set invfullscreen<CR>
 map <leader>q gqip
 
 " Visualize tabs and newlines
-set listchars=tab:▸\ ,eol:¬
+set listchars=tab:▸\ ,trail:·,eol:¬
 " Uncomment this to enable by default:
-" set list " To enable by default
+set list " To enable by default
 " Or use your leader key + l to toggle on/off
 map <leader>l :set list!<CR> " Toggle tabs and EOL
 
@@ -132,10 +132,11 @@ autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 " ===========================================================================
 " Make/Build Settings
 " ===========================================================================
-augroup MakeSetup
-    autocmd FileType cpp,c :autocmd! MakeSetup BufWritePost <buffer> :make
+augroup auto_make
+    autocmd!
+    autocmd FileType cpp,c :autocmd! auto_make BufWritePost <buffer> :silent make | redraw!
+    autocmd QuickFixCmdPost *make* cwindow
 augroup END
-
 
 " ===========================================================================
 " Plugin Configuration
@@ -144,7 +145,6 @@ augroup END
 " Monokai color scheme
 " ====================
 colorscheme monokai
-set t_ut=
 
 " Syntastic
 " =========
@@ -156,11 +156,6 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" For DeltaTau Power PMAC Script Language
-au BufRead,BufNewFile *.pmh set ft=c
-au BufRead,BufNewFile *.pmc set ft=c
-au BufRead,BufNewFile *.plc set ft=c
 
 " Python syntax
 " =============
