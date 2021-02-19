@@ -16,7 +16,8 @@ call plug#begin('~/.vim/plugged')
     Plug 'crusoexia/vim-monokai'
     Plug 'vim-python/python-syntax'
     Plug 'ycm-core/YouCompleteMe'
-    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'}
+    Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'},
+    Plug 'itchyny/lightline.vim'
 
 call plug#end()
 
@@ -74,12 +75,8 @@ set ttyfast
 " Status bar
 set laststatus=2
 
-" Status Line
-set statusline=%t[%{strlen(&fenc)?&fenc:'none'},%{&ff}]%h%m%r%y%=%c,%l/%L\ %P}}
-
 " Last line
-set showmode
-set showcmd
+set noshowmode
 
 " Searching
 nnoremap / /\v
