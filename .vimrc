@@ -129,6 +129,8 @@ filetype on
 " Don't expand tabs and set width to 8
 autocmd FileType make set noexpandtab shiftwidth=8 softtabstop=0
 
+autocmd FileType cpp,c set expandtab shiftwidth=4 softtabstop=4
+
 " ===========================================================================
 " Make/Build Settings
 " ===========================================================================
