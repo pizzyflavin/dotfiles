@@ -1,3 +1,7 @@
+" Don't try to be vi compatible
+set nocompatible
+
+
 " Plugin Setup
 
 " Install vim-plug if not installed
@@ -17,13 +21,11 @@ call plug#begin('~/.vim/plugged')
     Plug 'vim-python/python-syntax'
     Plug 'ycm-core/YouCompleteMe'
     Plug 'rdnetto/YCM-Generator', { 'branch': 'stable'},
-    Plug 'itchyny/lightline.vim'
+    Plug 'itchyny/lightline.vim',
+    Plug 'sheerun/vim-polyglot'
 
 call plug#end()
 
-" Don't try to be vi compatible
-set nocompatible
-"
 " TODO: Pick a leader key
 " let mapleader = ","
 
@@ -140,6 +142,11 @@ augroup END
 " ===========================================================================
 " Plugin Configuration
 " ===========================================================================
+
+" Nerdtree
+" ========
+" Update status bar when opening NERDTree
+"autocmd VimEnter * NERDTree | call lightline#update()
 
 " Monokai color scheme
 " ====================
