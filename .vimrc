@@ -117,7 +117,10 @@ set background=dark
 " Remove trailing whitespace
 nnoremap <Leader>rtw :%s/\s\+$//e<CR>
 
-
+" ===========================================================================
+" Custom Vim Commands
+" ===========================================================================
+command Vterm vertical terminal
 
 " ===========================================================================
 " FileType Specific Settings
