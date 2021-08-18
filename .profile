@@ -60,7 +60,7 @@ if [ "$EMBEDDED_DEV" = true ]; then
 
     # Get possible embedded tools version of arm gcc
     EMBEDDED_TOOLS_ARM_GCC=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d \
-                             -name gcc-arm-none-eabi-*)
+                             -name "gcc-arm-none-eabi-*")
 
     # Is Arm GCC already in the path?
     if [ -x "$INSTALLED_ARM_GCC" ]; then
@@ -84,7 +84,7 @@ if [ "$EMBEDDED_DEV" = true ]; then
 
     # Get possible embedded tools version of OpenOCD
     EMBEDDED_TOOLS_OPENOCD=$(find $HOME/tools/EmbeddedArm -maxdepth 1 -type d \
-                             -name openocd-*)
+                             -name "openocd-*")
 
     # Is OpenOCD already in the path?
     if [ -x "$INSTALLED_OPENOCD" ]; then
