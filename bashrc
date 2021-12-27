@@ -67,11 +67,6 @@ alias l='ls -lhv'          #  Like ll, but don't show hidden files
 alias tree='tree -Cv'      #  Nice alternative to 'recursive ls' ...
 
 #-------------------------------------------------------------
-# Dotfiles management
-#-------------------------------------------------------------
-alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
-
-#-------------------------------------------------------------
 # Tailoring 'less'
 #-------------------------------------------------------------
 
