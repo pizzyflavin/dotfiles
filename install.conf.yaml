@@ -1,0 +1,22 @@
+- defaults:
+    link:
+      relink: true
+      create: true
+- clean: ['~']
+
+- link:
+    ~/.bashrc: bashrc
+    ~/.bash_profile: bash_profile
+    ~/.bash_prompt: bash_prompt
+    ~/.gitconfig: gitconfig
+    ~/.inputrc: inputrc
+    ~/.profile: profile
+    ~/.vim/syntax/c.vim: vim/syntax/c.vim
+    ~/.vimrc: vimrc
+
+    ~/.config/kitty/kitty.conf: config/kitty/kitty.conf
+    ~/.config/kitty/dracula.conf: config/kitty/dracula.conf
+    ~/.config/kitty/diff.conf: config/kitty/diff.conf
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
