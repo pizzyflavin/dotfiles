@@ -15,9 +15,6 @@ fi
 #============================================================================#
 export VISUAL=nvim
 
-export CLICOLOR=1
-export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
-
 #============================================================================#
 #  ALIASES AND FUNCTIONS
 #============================================================================#
@@ -25,8 +22,11 @@ export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
 #-------------------------------------------------------------
 # System Aliases
 #-------------------------------------------------------------
+
 alias upd8='sudo apt update && sudo apt upgrade && \
             sudo apt autoremove --purge && sudo apt autoclean'
+
+alias vim='nvim'
 
 #-------------------
 # Personal Aliases
