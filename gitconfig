@@ -43,7 +43,7 @@
 [push]
 	default = simple
 [core]
-	editor = /usr/local/bin/vim
+	editor = nvim
 	autocrlf = input
 [filter "lfs"]
 	clean = git-lfs clean -- %f
