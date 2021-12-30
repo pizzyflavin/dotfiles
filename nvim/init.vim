@@ -29,6 +29,9 @@ set showcmd
 " Key maps
 " ----------------------------------------------------------------------------
 
+" Keep visible leader indicator by mapping space to default leader
+map <space> <leader>
+
 " Allow gf to open non-existent files
 map gf :edit <cfile><cr>
 
