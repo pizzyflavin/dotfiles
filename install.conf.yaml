@@ -25,9 +25,9 @@
     ~/.config/nvim/after/syntax/:
       glob: true
       path: nvim/after/syntax/*
-    ~/.config/nvim/lua/plugins:
+    ~/.config/nvim/lua/lsp:
       glob: true
-      path: nvim/lua/plugins/*
+      path: nvim/lua/lsp/*
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

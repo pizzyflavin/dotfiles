@@ -63,8 +63,8 @@ call plug#end()
 " Trigger the autocmds in plugin config files
 doautocmd User PlugLoaded
 
-" Require Lua Plugins
-lua require('plugins')
+" Require Lua LSP configuration
+lua require('lsp')
 
 " ----------------------------------------------------------------------------
 " Miscellaneous
