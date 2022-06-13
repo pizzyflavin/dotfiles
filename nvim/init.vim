@@ -53,10 +53,10 @@ source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/lightline.vim
-"source ~/.config/nvim/plugins/polyglot.vim
 source ~/.config/nvim/plugins/floaterm.vim
 source ~/.config/nvim/plugins/dracula.vim
 source ~/.config/nvim/plugins/nvim-lspconfig.vim
+source ~/.config/nvim/plugins/nvim-treesitter.vim
 
 call plug#end()
 
