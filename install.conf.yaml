@@ -28,6 +28,9 @@
     ~/.config/nvim/lua/lsp:
       glob: true
       path: nvim/lua/lsp/*
+    ~/.config/nvim/lua/plugins:
+      glob: true
+      path: nvim/lua/plugins/*
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
