@@ -22,9 +22,6 @@
     ~/.config/nvim/plugins/: 
       glob: true
       path: nvim/plugins/*
-    ~/.config/nvim/after/syntax/:
-      glob: true
-      path: nvim/after/syntax/*
     ~/.config/nvim/lua/lsp:
       glob: true
       path: nvim/lua/lsp/*
