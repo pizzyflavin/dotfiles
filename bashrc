@@ -4,15 +4,30 @@
 # @author Ricky Rininger
 #============================================================================#
 
+#==============================================================================
+#  OS DETECTION
+#==============================================================================
+
+platform='unknown'
+unamestr="$(uname)"
+
+if [[ "$unamestr" == 'Linux' ]]; then
+    platform='linux'
+elif [[ "$unamestr" == 'Darwin' ]]; then
+    platform='darwin'
+else
+    echo "Unable to identify OS!"
+    exit 1
+fi
+
+#============================================================================#
+#  ENVIRONMENT SETUP
+#============================================================================#
 # Check for .bash_prompt
 if [ -f ~/.bash_prompt ]; then
   source ~/.bash_prompt
 fi
 
-
-#============================================================================#
-#  ENVIRONMENT SETUP
-#============================================================================#
 export VISUAL=nvim
 
 #============================================================================#
@@ -23,8 +38,12 @@ export VISUAL=nvim
 # System Aliases
 #-------------------------------------------------------------
 
-alias upd8='sudo apt update && sudo apt upgrade && \
-            sudo apt autoremove --purge && sudo apt autoclean'
+if [[ $platform == 'darwin' ]]; then
+  alias upd8='brew update && brew upgrade && brew cleanup'
+else
+  alias upd8='sudo apt update && sudo apt upgrade && \
+              sudo apt autoremove --purge && sudo apt autoclean'
+fi
 
 alias vim='nvim'
 
