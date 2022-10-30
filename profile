@@ -43,7 +43,7 @@ if [[ $platform == 'linux' ]]; then
         # CMake bin dir for downloaded binary
         PATH="$PATH:$HOME/tools/cmake-3.24.0-linux-x86_64/bin"
         # clangd bin dir for downloaded binary
-        PATH="$PATH:$HOME/tools/clangd_15.0.3/bin"
+        PATH="$PATH:$HOME/tools/clangd/bin"
         # bin dir for local pip installations
         PATH="$PATH:$HOME/.local/bin"
 
