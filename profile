@@ -55,32 +55,36 @@ elif [[ $platform == 'darwin' ]]; then
 
     echo "OS: Darwin"
     echo ""
+    #
+    # Add arm-none-eabi-gcc embedded tools to path
+    ARM_GCC_PATH="$HOME/tools/gcc-arm-none-eabi/bin"
+    PATH="$PATH:$ARM_GCC_PATH"
 
     # Add homebrew sbin to path
     BREW_SBIN="/usr/local/sbin"
-    PATH="$BREW_SBIN:$PATH"
+    PATH="$PATH:$BREW_SBIN"
 
     # Add gnubin directory to path (macOS only)
     BREW_COREUTILS_PATH="$(brew --prefix coreutils)/libexec/gnubin"
-    PATH="$BREW_COREUTILS_PATH:$PATH"
+    PATH="$PATH:$BREW_COREUTILS_PATH"
 
     # Add gnugrep directory to path (macOS only)
     BREW_GREP_PATH="$(brew --prefix grep)/libexec/gnubin"
-    PATH="$BREW_GREP_PATH:$PATH"
+    PATH="$PATH:$BREW_GREP_PATH"
 
     # Add homebrew's python to path before system python (macOS only)
     BREW_PYTHON_PATH="/usr/local/opt/python/libexec/bin"
-    PATH="$BREW_PYTHON_PATH:$PATH"
+    PATH="$PATH:$BREW_PYTHON_PATH"
 
     # Add Qt to path
     QT_PATH="/usr/local/opt/qt/bin"
-    PATH="$QT_PATH:$PATH"
+    PATH="$PATH:$QT_PATH"
 fi
 
 
 # Add ~/bin directory to path
 HOME_BIN="$HOME/bin"
-PATH="$HOME_BIN:$PATH"
+PATH="$PATH:$HOME_BIN"
 
 export PATH
 
@@ -97,7 +101,7 @@ elif [[ $platform == 'darwin' ]]; then
 
     # Add gnuman directory to manpath (macOS only)
     BREW_COREUTILS_MANPATH="$(brew --prefix coreutils)/libexec/gnuman"
-    MANPATH="$BREW_COREUTILS_MANPATH:$MANPATH"
+    MANPATH="$MANPATH:$BREW_COREUTILS_MANPATH"
 fi
 
 export MANPATH
