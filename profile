@@ -42,8 +42,6 @@ if [[ $platform == 'linux' ]]; then
 
         # CMake bin dir for downloaded binary
         PATH="$PATH:$HOME/tools/cmake-3.24.0-linux-x86_64/bin"
-        # bin dir for local pip installations
-        PATH="$PATH:$HOME/.local/bin"
 
         # Alias for gdb debugging
         alias debug='cmd.exe /c start wsl.exe ~/tools/openocd/bin/openocd -f interface/stlink.cfg -f target/stm32f4x.cfg -c "init" -c "halt" -c "reset halt" & arm-none-eabi-gdb-py --eval-command="target remote localhost:3333"'
@@ -81,6 +79,10 @@ elif [[ $platform == 'darwin' ]]; then
     PATH="$PATH:$QT_PATH"
 fi
 
+# Check for bin dir for local pip installations
+if [ -d "$HOME/.local/bin" ] ; then
+    PATH="$PATH:$HOME/.local/bin"
+fi
 
 # Add ~/bin directory to path
 HOME_BIN="$HOME/bin"
