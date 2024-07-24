@@ -24,8 +24,13 @@ fi
 #  ENVIRONMENT SETUP
 #============================================================================#
 # Check for .bash_prompt
-if [ -f ~/.bash_prompt ]; then
-  source ~/.bash_prompt
+if [ -f "$HOME/.bash_prompt" ]; then
+  source "$HOME/.bash_prompt"
+fi
+
+# Check for rust/cargo environment
+if [ -f "$HOME/.cargo/env" ]; then
+  source "$HOME/.cargo/env"
 fi
 
 export VISUAL=nvim
