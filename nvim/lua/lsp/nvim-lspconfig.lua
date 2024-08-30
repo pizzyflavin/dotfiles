@@ -34,13 +34,29 @@ end
 local servers = { 'clangd', 'cmake', 'jsonls', 'pyright', 'rust_analyzer', 'tsserver' }
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 for _, lsp in pairs(servers) do
-  require('lspconfig')[lsp].setup {
-    capabilities = capabilities,
-    on_attach = on_attach,
-    flags = {
-      -- This will be the default in neovim 0.7+
-      debounce_text_changes = 150,
+  if lsp == 'clangd' then
+    require('lspconfig')[lsp].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      cmd = { 'clangd',
+              '--query-driver=' ..
+                os.getenv('HOME') ..
+                '/tools/gcc-arm-none-eabi/bin/arm-none-eabi-gcc'
+      },
+      flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+      }
     }
-  }
+  else
+    require('lspconfig')[lsp].setup {
+      capabilities = capabilities,
+      on_attach = on_attach,
+      flags = {
+        -- This will be the default in neovim 0.7+
+        debounce_text_changes = 150,
+      }
+    }
+end
 end
 
