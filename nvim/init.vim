@@ -60,6 +60,7 @@ source ~/.config/nvim/plugins/nvim-treesitter.vim
 source ~/.config/nvim/plugins/nvim-cmp.vim
 source ~/.config/nvim/plugins/nvim-telescope.vim
 source ~/.config/nvim/plugins/nvim-dap.vim
+source ~/.config/nvim/plugins/vim-vsnip.vim
 
 call plug#end()
 

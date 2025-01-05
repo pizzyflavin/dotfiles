@@ -3,6 +3,10 @@ vim.opt.completeopt={"menu", "menuone", "noselect"}
 
 local cmp = require'cmp'
 
+vim.keymap.del('n', 's')
+vim.keymap.del('x', 's')
+vim.keymap.set('n', 's', 's', { noremap = true })
+
 cmp.setup({
 
   snippet = {
