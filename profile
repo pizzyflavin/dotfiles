@@ -58,6 +58,10 @@ elif [[ $platform == 'darwin' ]]; then
     ARM_GCC_PATH="$HOME/tools/gcc-arm-none-eabi/bin"
     PATH="$PATH:$ARM_GCC_PATH"
 
+    # Add docker to path
+    DOCKER_PATH="/Applications/Docker.app/Contents/Resources/bin"
+    PATH="$PATH:$DOCKER_PATH"
+
     # Add homebrew sbin to path
     BREW_SBIN="/usr/local/sbin"
     PATH="$PATH:$BREW_SBIN"
