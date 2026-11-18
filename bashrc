@@ -33,6 +33,29 @@ if [ -f "$HOME/.cargo/env" ]; then
   source "$HOME/.cargo/env"
 fi
 
+# Check for git completion (first file found wins)
+if [[ $platform == 'darwin' ]]; then
+  git_completion_paths=(
+    "/opt/homebrew/etc/bash_completion.d/git-completion.bash"   # Homebrew git, Apple Silicon
+    "/usr/local/etc/bash_completion.d/git-completion.bash"      # Homebrew git, Intel
+    "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
+    "$HOME/.git-completion.bash"
+  )
+else
+  git_completion_paths=(
+    "/usr/share/bash-completion/completions/git"                # Debian/Ubuntu/WSL git package
+    "$HOME/.git-completion.bash"
+  )
+fi
+
+for git_completion in "${git_completion_paths[@]}"; do
+  if [ -f "$git_completion" ]; then
+    source "$git_completion"
+    break
+  fi
+done
+unset git_completion git_completion_paths
+
 export VISUAL=nvim
 
 #============================================================================#
