@@ -35,9 +35,11 @@ fi
 
 # Check for git completion (first file found wins)
 if [[ $platform == 'darwin' ]]; then
-  git_completion_paths=(
-    "/opt/homebrew/etc/bash_completion.d/git-completion.bash"   # Homebrew git, Apple Silicon
-    "/usr/local/etc/bash_completion.d/git-completion.bash"      # Homebrew git, Intel
+  git_completion_paths=()
+  if command -v brew >/dev/null 2>&1; then
+    git_completion_paths+=("$(brew --prefix)/etc/bash_completion.d/git-completion.bash")
+  fi
+  git_completion_paths+=(
     "/Library/Developer/CommandLineTools/usr/share/git-core/git-completion.bash"
     "$HOME/.git-completion.bash"
   )
